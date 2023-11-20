@@ -1,4 +1,4 @@
-#!/bin/bash#
+#!/bin/bash
 
 cp -i ./latam /usr/share/X11/xkb/symbols/
 cp -i ./latin /usr/share/X11/xkb/symbols/

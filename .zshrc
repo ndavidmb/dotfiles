@@ -24,7 +24,7 @@ bindkey '^k' autosuggest-accept
 
 p() {
   cd ~/Documentos/Projects/"$(/usr/bin/ls -d ~/Documentos/Projects/*/ | 
-    sed -e "s/\/home\/ndavidmb\/Documentos\/Projects\///g" | fzf)" &&
+    sed -e "s/\/home\/ndavidmb\/Documents\/Projects\///g" | fzf)" &&
       $1 .
 }
 

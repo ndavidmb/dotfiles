@@ -37,7 +37,6 @@ require('material').setup({
 
 require("nvim-tree").setup({
   sort_by = "case_sensitive",
-  open_on_setup = true,
   actions = {
     open_file = {
       quit_on_open = true,
@@ -72,7 +71,7 @@ end
 
 -- Autocompletion
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 local lspconfig = require('lspconfig')
 local configs = require'lspconfig.configs'
@@ -218,3 +217,11 @@ require'eslint'.setup({
   },
 })
 
+
+local function open_nvim_tree()
+
+  -- open the tree
+  require("nvim-tree.api").tree.open()
+end
+
+vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
